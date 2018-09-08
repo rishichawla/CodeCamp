@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body %}
-  <ul>
-  {% for Name in data %}
-  <li>  abc {{name}} , {{data[name][0]}}, {{data[name][1]}}, {{data[name][2]}} </li>
-  {% endfor %}
-  </ul>
+  <form action = " {{ url_for(Details) }}", method = "post">
+    <select name = "month">
+      {{}}
+      {{% for month in months %}}
+      <option value = {{month}}> {{month}} </option>
+    </select>
   <a href = "{{ url_for('index') }}"> Add more items </a>
 {% endblock %}

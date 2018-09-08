@@ -5,15 +5,28 @@
 {% endblock %}
 
 {% block body %}
-  <form action = "{{ url_for ('details')}}", method = "post">
+  <form action = "{{ url_for('details') }}", method = "post">
     <p> Enter Name: </p>
-    <input type = "text" name = "item_name" placeholder = "Enter name of the item">
+    <input type = "text" name = "product_name" placeholder = "Enter name of the product">
     <p> Enter profit earned per unit sold: </p>
     <input type = "text" name = "price" placeholder = "Enter profit earned per unit sold">
-    <p> Enter Name: </p>
-    <input type = "text" name = "quantity" placeholder = "Enter name of the item">
-    <p> Enter profit earned per unit sold: </p>
-    <input type = "text" name = "month" placeholder = "Enter profit earned per unit sold">
+    <p> Enter month </p>
+    <select name = "month">
+      <option value = "JANUARY"> JANUARY </option>
+      <option value = "FEBRUARY"> FEBRUARY </option>
+      <option value = "MARCH"> MARCH </option>
+      <option value = "APRIL"> APRIL </option>
+      <option value = "MAY"> MAY </option>
+      <option value = "JUNE"> JUNE </option>
+      <option value = "JULY"> JULY </option>
+      <option value = "AUGUST"> AUGUST </option>
+      <option value = "SEPTEMBER"> SEPTEMBER </option>
+      <option value = "OCTOBER"> OCTOBER </option>
+      <option value = "NOVEMBER"> NOVEMBER </option>
+      <option value = "DECEMBER"> DECEMBER </option>
+    </select>
+    <p> Enter number of units sold </p>
+    <input type = "text" name = "quantity" placeholder = "Enter number of units sold">
     <button> Next </button>
-  </button>
+  </form>
 {% endblock %}
