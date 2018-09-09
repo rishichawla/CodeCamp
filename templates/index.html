@@ -1,32 +1,39 @@
-{% extends "layout.html" %}
-
-{% block heading %}
-  Enter Item
-{% endblock %}
-
-{% block body %}
-  <form action = "{{ url_for('details') }}", method = "post">
-    <p> Enter Name: </p>
-    <input type = "text" name = "product_name" placeholder = "Enter name of the product">
-    <p> Enter profit earned per unit sold: </p>
-    <input type = "text" name = "price" placeholder = "Enter profit earned per unit sold">
-    <p> Enter month </p>
-    <select name = "month">
-      <option value = "JANUARY"> JANUARY </option>
-      <option value = "FEBRUARY"> FEBRUARY </option>
-      <option value = "MARCH"> MARCH </option>
-      <option value = "APRIL"> APRIL </option>
-      <option value = "MAY"> MAY </option>
-      <option value = "JUNE"> JUNE </option>
-      <option value = "JULY"> JULY </option>
-      <option value = "AUGUST"> AUGUST </option>
-      <option value = "SEPTEMBER"> SEPTEMBER </option>
-      <option value = "OCTOBER"> OCTOBER </option>
-      <option value = "NOVEMBER"> NOVEMBER </option>
-      <option value = "DECEMBER"> DECEMBER </option>
-    </select>
-    <p> Enter number of units sold </p>
-    <input type = "text" name = "quantity" placeholder = "Enter number of units sold">
-    <button> Next </button>
-  </form>
-{% endblock %}
+<html>
+  <head>
+    <title> Sales Analysis </title>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'style.css') }}">
+  </head>
+  <body>
+    <div class = "header">
+      <h1> SALES ANALYSIS 2018 </h1>
+    </div>
+    <div class = "form_data">
+      <form action = "{{ url_for('details') }}", method = "post">
+        <p> Enter Name: </p>
+        <input type = "text" name = "product_name" placeholder = "Enter name of the product">
+        <p> Enter profit earned per unit sold: </p>
+        <input type = "number" name = "price" placeholder = "Enter profit earned per unit sold">
+        <p> Enter month </p>
+        <select name = "month">
+          <option value = "JANUARY"> JANUARY </option>
+          <option value = "FEBRUARY"> FEBRUARY </option>
+          <option value = "MARCH"> MARCH </option>
+          <option value = "APRIL"> APRIL </option>
+          <option value = "MAY"> MAY </option>
+          <option value = "JUNE"> JUNE </option>
+          <option value = "JULY"> JULY </option>
+          <option value = "AUGUST"> AUGUST </option>
+          <option value = "SEPTEMBER"> SEPTEMBER </option>
+          <option value = "OCTOBER"> OCTOBER </option>
+          <option value = "NOVEMBER"> NOVEMBER </option>
+          <option value = "DECEMBER"> DECEMBER </option>
+        </select>
+        <p> Enter number of units sold </p>
+        <input type = "number" name = "quantity" placeholder = "Enter number of units sold">
+        <p> <button class = "btn"> Next </button> </p>
+      </form>
+    </div>
+      <p> <a href = "{{ url_for('piechart') }}" class = "btn" style = "display: inline-block;"> <button>  Pie Chart </button> </a>
+        <a href = "{{ url_for('bargraph') }}" class = "btn" style = "display: inline-block;"> <button>  Bar Graph </button> </a> </p>
+  </body>
+</html>

@@ -1,15 +1,30 @@
-{% extends "layout.html" %}
+<html>
+  <head>
+    <title> 
 
 {% block heading %}
   Details:
 {% endblock %}
 
 {% block body %}
-  <form action = " {{ url_for(Details) }}", method = "post">
+  <form action = " {{ url_for(product) }}", method = "post">
+    <p> Enter month </p>
     <select name = "month">
-      {{}}
-      {{% for month in months %}}
-      <option value = {{month}}> {{month}} </option>
+      <option value = "JANUARY"> JANUARY </option>
+      <option value = "FEBRUARY"> FEBRUARY </option>
+      <option value = "MARCH"> MARCH </option>
+      <option value = "APRIL"> APRIL </option>
+      <option value = "MAY"> MAY </option>
+      <option value = "JUNE"> JUNE </option>
+      <option value = "JULY"> JULY </option>
+      <option value = "AUGUST"> AUGUST </option>
+      <option value = "SEPTEMBER"> SEPTEMBER </option>
+      <option value = "OCTOBER"> OCTOBER </option>
+      <option value = "NOVEMBER"> NOVEMBER </option>
+      <option value = "DECEMBER"> DECEMBER </option>
     </select>
-  <a href = "{{ url_for('index') }}"> Add more items </a>
+    <p> Enter number of units sold </p>
+    <input type = "text" name = "quantity" placeholder = "Enter number of units sold">
+  </form>
+  <a href = "{{ url_for('product') }}"> Add more items </a>
 {% endblock %}
